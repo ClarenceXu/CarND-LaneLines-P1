@@ -38,20 +38,20 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 4. draw left and right lanes using the average slope and middle point
 
 Here is an example after using the pipeline:
-![solidYellowCurve][image1]
+![alt text][image1]
 
 
 ### 2. Identify potential shortcomings with your current pipeline
 
 
-One potential shortcoming would be the marked lanes will not be accurate when the lane has a sharp curve
+One potential shortcoming would be the marked lanes will not be accurate when the lane has a sharp curve.
 
-Another shortcoming is that when the color of the lane changes due to any circumstance, e.g. shadowed, the lane could not be detected. 
+Another shortcoming is that when the color of the lane changes, e.g. shadowed, the lane could not be detected. 
 
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to find a better way to extrapolate the line segments
-In order to draw the lanes, I simply averaged the slop of detected left or right segments, calculated the middle point by averaging all the start/end points of line segments. 
+A possible improvement would be to find a better way to extrapolate the line segments.
+I simply averaged the slop of detected left or right segments, calculated the middle point by averaging all the start/end points of line segments. A better transformation based on these line segments should be implemented. 
 
 Another potential improvement could be to find a better way to identify the best parameters' combination for gaussian blur, canny and hough transformation. I manually tested different combination and check which one has the best result.  It is better to find a more intellegent approach.

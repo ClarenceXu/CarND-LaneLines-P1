@@ -15,7 +15,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
+[image1]: ./test_images_output/solidYellowCurve.jpg "solidYellowCurve"
 
 ---
 
@@ -23,24 +23,22 @@ The goals / steps of this project are the following:
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. 
+My pipeline consisted of 6 steps. 
 1. Select color white and yellow from the image
 2. Convert the images to grayscale
 3. Use Gaussian blur to reduce detail  
 4. Use canny to identify the edage 
 5. Define the region_of_interest 
 6. Detect the lines using hough transformation
-7. Catogorize left and right lines, remove noise lines, calculate the average slop and middle point of left and right lines 
-8. draw left and right lane using the average slop and middle point
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by:
-1. Catogorize left and right lanes
-2. Remove noise lines based on the slop of the lines, e.g. slopt of a right lane shall large than 0.5, slopt of a left lane shall smaller than -0.5
-3. Calculate the average slop and middle point of left and right lanes 
-4. draw left and right lanes using the average slop and middle point
+1. Catogorize left and right line segments
+2. Remove noise lines based on the slop of the lines, e.g. slope of a right lane shall large than 0.5, slope of a left lane shall smaller than -0.5
+3. Calculate the average slope and middle point of left and right line segments 
+4. draw left and right lanes using the average slope and middle point
 
 Here is an example after using the pipeline:
-[solidYellowCurve]: ./test_images_output/solidYellowCurve.jpg "solidYellowCurve"
+![solidYellowCurve][image1]
 
 
 ### 2. Identify potential shortcomings with your current pipeline
